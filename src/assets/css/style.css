@@ -1,0 +1,20 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+
+@font-face {
+  font-family: 'Digital Numbers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Digital Numbers'), url("@/assets/fonts/DigitalNumbers-Regular.woff") format('woff')
+}

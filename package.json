@@ -1,0 +1,20 @@
+{
+  "name": "calculator-3d",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tresjs/cientos": "^3.8.0",
+    "@tresjs/core": "3.7.0"
+  },
+  "devDependencies": {
+    "vue-tsc": "^1.8.27",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.10"
+  }
+}
