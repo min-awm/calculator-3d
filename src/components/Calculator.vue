@@ -10,6 +10,7 @@ import {
   Environment,
 } from "@tresjs/cientos";
 import CalcMath from "@/services/calculator-math.js";
+import gsap from "gsap";
 
 const resultText = ref(0);
 const gl = {
@@ -21,8 +22,17 @@ const gl = {
   toneMapping: NoToneMapping,
 };
 const calcMath = new CalcMath();
-
 const { nodes } = await useGLTF("./model/calculator/scene.gltf");
+const calculatorRef = ref(null);
+
+watch(calculatorRef, (newValue, oldValue) => {
+  if (newValue) {
+    gsap.to(newValue.rotation, {
+      duration: 4,
+      y: 180 * (Math.PI / 180),
+    });
+  }
+});
 
 const pressKey = (key) => {
   const screenResultDom = document.getElementById("sceen-result");
@@ -44,9 +54,9 @@ const pressKey = (key) => {
       :scale-x="0.001"
       :scale-y="0.001"
       :scale-z="0.001"
-      :rotation-y="180 * (Math.PI / 180)"
       :rotation-x="5 * (Math.PI / 180)"
       :position="[0, 0, 0]"
+      ref="calculatorRef"
     >
       <Html
         transform
